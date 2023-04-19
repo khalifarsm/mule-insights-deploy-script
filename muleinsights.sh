@@ -16,7 +16,10 @@ mkdir mule-insights-deploy-script/data/mysql-dump
 mkdir mule-insights-deploy-script/data/ramls
 mkdir mule-insights-deploy-script/data/responses
 docker stack deploy -c mule-insights-deploy-script/docker-compose.yml muleinsights
-cp mule-insights-deploy-script/nginx.conf /etc/nginx/nginx.conf
 apt install -y nginx
+cp mule-insights-deploy-script/nginx.conf /etc/nginx/nginx.conf
 systemctl restart nginx
 apt-get install -y certbot
+apt install -y python3-certbot-nginx
+cp mule-insights-deploy-script/webhook.service /etc/systemd/system/webhook.service
+systemctl start webhook.service
