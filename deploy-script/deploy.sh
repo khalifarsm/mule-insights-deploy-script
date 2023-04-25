@@ -1,0 +1,1 @@
+sudo nohup java -jar deploy.jar https://eu1.anypoint.mulesoft.com minergatersm6 rassame19901107K
