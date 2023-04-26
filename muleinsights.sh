@@ -23,3 +23,9 @@ apt-get install -y certbot
 apt install -y python3-certbot-nginx
 cp mule-insights-deploy-script/webhook.service /etc/systemd/system/webhook.service
 systemctl start webhook.service
+apt install -y default-jre
+snap install doctl
+mkdir /root/.config
+doctl auth init
+doctl apps list
+export APPID=2318051e-df07-4c60-94e5-a26b258c4fd9
