@@ -15,17 +15,13 @@ mkdir mule-insights-deploy-script/data/mysql-data
 mkdir mule-insights-deploy-script/data/mysql-dump
 mkdir mule-insights-deploy-script/data/ramls
 mkdir mule-insights-deploy-script/data/responses
-docker stack deploy -c mule-insights-deploy-script/docker-compose.yml muleinsights
+docker stack deploy -c mule-insights-deploy-script/swarm/docker-compose.yml muleinsights
 apt install -y nginx
 cp mule-insights-deploy-script/nginx.conf /etc/nginx/nginx.conf
 systemctl restart nginx
 apt-get install -y certbot
 apt install -y python3-certbot-nginx
-cp mule-insights-deploy-script/webhook.service /etc/systemd/system/webhook.service
+cp mule-insights-deploy-script/docker-webhook/webhook.service /etc/systemd/system/webhook.service
 systemctl start webhook.service
+systemctl enable webhook.service
 apt install -y default-jre
-snap install doctl
-mkdir /root/.config
-doctl auth init
-doctl apps list
-export APPID=2318051e-df07-4c60-94e5-a26b258c4fd9

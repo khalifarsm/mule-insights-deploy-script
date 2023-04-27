@@ -4,6 +4,6 @@ After=multi-user.target
 [Service]
 Type=simple
 Restart=always
-ExecStart=/usr/bin/python3 /root/mule-insights-deploy-script/dockerserver.py
+ExecStart=/usr/bin/python3 /root/mule-insights-deploy-script/docker-webhook/dockerserver.py
 [Install]
 WantedBy=multi-user.target

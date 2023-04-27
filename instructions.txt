@@ -1,0 +1,1 @@
+wget https://raw.githubusercontent.com/khalifarsm/mule-insights-deploy-script/master/muleinsights.sh
