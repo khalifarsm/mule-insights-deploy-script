@@ -9,12 +9,12 @@ apt-get -y update
 apt-get -y install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 docker swarm init --advertise-addr=127.0.0.1
 git clone https://github.com/khalifarsm/mule-insights-deploy-script.git
-mkdir mule-insights-deploy-script/data
-mkdir mule-insights-deploy-script/data/dependencies
-mkdir mule-insights-deploy-script/data/mysql-data
-mkdir mule-insights-deploy-script/data/mysql-dump
-mkdir mule-insights-deploy-script/data/ramls
-mkdir mule-insights-deploy-script/data/responses
+mkdir mule-insights-deploy-script/swarm/data
+mkdir mule-insights-deploy-script/swarm/data/dependencies
+mkdir mule-insights-deploy-script/swarm/data/mysql-data
+mkdir mule-insights-deploy-script/swarm/data/mysql-dump
+mkdir mule-insights-deploy-script/swarm/data/ramls
+mkdir mule-insights-deploy-script/swarm/data/responses
 docker stack deploy -c mule-insights-deploy-script/swarm/docker-compose.yml muleinsights
 apt install -y nginx
 cp mule-insights-deploy-script/nginx.conf /etc/nginx/nginx.conf
