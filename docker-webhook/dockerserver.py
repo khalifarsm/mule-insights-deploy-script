@@ -19,7 +19,7 @@ class RequestHandler(BaseHTTPRequestHandler):
             command = "docker system prune -af"
             output3 = os.popen(command).read()
             print(output3)
-            command = "doctl apps create-deployment $APPID"
+            command = "doctl apps create-deployment 2318051e-df07-4c60-94e5-a26b258c4fd9"
             output2 = os.popen(command).read()
             print(output2)
             self._send_response(output)
