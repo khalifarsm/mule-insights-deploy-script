@@ -13,7 +13,7 @@ class RequestHandler(BaseHTTPRequestHandler):
             command = "docker pull khalifarsm/analyser"
             output1 = os.popen(command).read()
             print(output1)
-            command = "docker stack deploy -c /root/mule-insights-deploy-script/docker-compose.yml muleinsights"
+            command = "docker stack deploy -c /root/mule-insights-deploy-script/swarm/docker-compose.yml muleinsights"
             output = os.popen(command).read()
             print(output)
             command = "docker system prune -af"
