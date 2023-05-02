@@ -11,8 +11,6 @@ services:
       - ./data:/data
     environment:
       DW_HOME: /data/responses
-    depends_on:
-      - db
 
   plantuml:
     image: khalifarsm/plantuml-server
